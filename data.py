@@ -5,8 +5,8 @@ import csv
 #connect to db
 mydb = mysql.connector.connect(
   host="localhost",
-  user="larry",
-  password="tXW0x7MZGIHCntp2",
+  user="root",
+  password="",
   database="gameaccidents"
 )
 
@@ -27,7 +27,7 @@ with open('GamesClean2018.csv') as csvfile:
         
         #see if title has been loaded, get its id
         sql = "SELECT id FROM games WHERE title = \"" + cleantitle + "\""
-        print sql
+        print(sql)
         mycursor.execute(sql)
         myresult = mycursor.fetchall()
         print myresult
